@@ -1,7 +1,6 @@
 var express = require('express');
 var path = require('path');
 var request = require('request');
-var credentials = require('./credentials.js');
 
 var handlebars = require('express-handlebars');
 
@@ -28,7 +27,7 @@ app.port = app.set('port', process.env.PORT || localport);
 app.get('/', function(req, res) {
 
   // Set Last.fm API Key
-  var apiKey = credentials.apiKey
+  var apiKey = '3e74f7586698913e408e1aa7881f9082'
   var userName = 'xxmurder'
   var url = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + userName + '&api_key=' + apiKey + '&format=json'
 
