@@ -8,9 +8,49 @@
 	<script src="/scripts/ui.js"></script>
 </head>
 <body>
-	
+
 	{{{body}}}
-	
-	
+
+  <div class="music__box">
+    <!-- <form action="">
+      <input type="text" placeholder="Enter a username" id="search" />
+      <button type="submit" id="submit">SUBMIT</button>
+    </form> -->
+  </div>
+
+
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script src="https://use.typekit.net/cmf6jwf.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script>
+    var socket = io();
+
+    $(document).ready(function() {
+      socket.on('load', function(player, playing, trackInfo) {
+        var player = player;
+        var isPlaying = playing;
+        var trackInfo = '<ul class="music__box--info">' +
+                          '<li class="info--item track">'
+                        + trackInfo.trackName + '</li>' +
+                          '<li class="info--item artist">'
+                        +   trackInfo.artist + '</li>' +
+                          '<li class="info--item album">'
+                        +   trackInfo.album + '</li></ul>'
+        console.log(trackInfo)
+
+
+        if (isPlaying === true) {
+          $('.music__box').append('<div class="music__box--status"><h1>CURRENTLY LISTENING TO</h1></div>')
+        } else {
+          $('.music__box').append('<div class="music__box--status"><h1>LAST LISTENED TO</h1></div>')
+        }
+        $('.music__box').append(trackInfo)
+
+        $('.music__box').append(player)
+      })
+    })
+  </script>
 </body>
 </html>
