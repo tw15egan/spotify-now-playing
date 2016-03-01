@@ -24,6 +24,10 @@ body {
 	flex-direction: column;
 	background-color: #323232;
 	color: $spray;
+
+	@media (max-width: 450px) {
+		justify-content: flex-start;
+	}
 }
 
 h1 {
@@ -40,6 +44,12 @@ h1 {
 	align-items: center;
 	max-width: 300px;
 	background-color: lighten(#323232, 5%);
+
+	@media (max-width: 450px) {
+		width: 100%;
+		height: 100%;
+		max-width: none;
+	}
 }
 
 .music__box--status {
@@ -54,6 +64,25 @@ h1 {
 	list-style: none;
 	padding: 1rem 1rem;
 	width: 100%;
+	position: relative;
+
+	@media (max-width: 450px) {
+		padding: 2rem 3rem;
+		background-color: #323232;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		display: inline-block;
+		height: 30px;
+		width: 30px;
+		background: url('../img/arrows-2.svg');
+		background-size: 15px 15px;
+		background-repeat: no-repeat;
+		right: 0;
+		bottom: 0;
+	}
 
 	.track {
 		color: #f0f0f0;
@@ -76,4 +105,50 @@ a {
 
 .hidden {
 	display: none;
+}
+
+.music__box--player {
+	order: 3;
+	display: flex;
+	align-items: flex-end;
+	overflow: auto;
+	flex-basis: 1;
+
+	@media (max-width: 450px) {
+		height: 100%;
+		align-items: center;
+	}
+}
+
+
+
+.footer {
+	order: 4;
+	padding: .5rem;
+	width: 100%;
+	background-color: lighten(#323232, 5%);
+	display: flex;
+	justify-content: space-between;
+	svg {
+	  height: 30px;
+	  width: 30px;
+		fill: lighten(#323232, 35%);
+
+		&:hover {
+			path {
+				fill: $spray;
+			}
+		}
+	}
+
+	@media (max-width: 450px) {
+		padding: 2rem;
+		background-color: #323232;
+	}
+}
+
+
+.hide {
+	display: inline-block;
+	height: 0;
 }

@@ -26,6 +26,11 @@ body {
           flex-direction: column;
   background-color: #323232;
   color: #71F79F; }
+  @media (max-width: 450px) {
+    body {
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; } }
 
 h1 {
   color: #424651;
@@ -46,6 +51,11 @@ h1 {
           align-items: center;
   max-width: 300px;
   background-color: #3f3f3f; }
+  @media (max-width: 450px) {
+    .music__box {
+      width: 100%;
+      height: 100%;
+      max-width: none; } }
 
 .music__box--status {
   width: 100%;
@@ -63,7 +73,23 @@ h1 {
           justify-content: space-around;
   list-style: none;
   padding: 1rem 1rem;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
+  @media (max-width: 450px) {
+    .music__box--info {
+      padding: 2rem 3rem;
+      background-color: #323232; } }
+  .music__box--info::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background: url("../img/arrows-2.svg");
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    right: 0;
+    bottom: 0; }
   .music__box--info .track {
     color: #f0f0f0; }
   .music__box--info .artist {
@@ -78,3 +104,53 @@ a {
 
 .hidden {
   display: none; }
+
+.music__box--player {
+  -webkit-order: 3;
+      -ms-flex-order: 3;
+          order: 3;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: auto;
+  -webkit-flex-basis: 1;
+      -ms-flex-preferred-size: 1;
+          flex-basis: 1; }
+  @media (max-width: 450px) {
+    .music__box--player {
+      height: 100%;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+                  -ms-grid-row-align: center;
+              align-items: center; } }
+
+.footer {
+  -webkit-order: 4;
+      -ms-flex-order: 4;
+          order: 4;
+  padding: .5rem;
+  width: 100%;
+  background-color: #3f3f3f;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .footer svg {
+    height: 30px;
+    width: 30px;
+    fill: #8b8b8b; }
+    .footer svg:hover path {
+      fill: #71F79F; }
+  @media (max-width: 450px) {
+    .footer {
+      padding: 2rem;
+      background-color: #323232; } }
+
+.hide {
+  display: inline-block;
+  height: 0; }
