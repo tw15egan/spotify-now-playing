@@ -27,6 +27,12 @@
   <script>
     var socket = io();
 
+    $(document).ready(function() {
+      var searchString = ''
+      socket.emit('pageLoad', searchString)
+      return false;
+    })
+
     socket.on('load', function(player, playing, trackInfo) {
       var player = player;
       var isPlaying = playing;

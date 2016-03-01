@@ -26,33 +26,7 @@ app.port = app.set('port', process.env.PORT || localport);
 
 app.get('/', function(req, res) {
 
-  // Set Last.fm API Key
-  var apiKey = '3e74f7586698913e408e1aa7881f9082'
-  var userName = 'xxmurder'
-  var url = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + userName + '&api_key=' + apiKey + '&format=json'
 
-  // Fetch Last.FM API for recent tracks
-  getRecentTracks(url, function(results) {
-
-    // Make object of necessary fields, store in output
-    var output = handleRecentTracks(results)
-
-    // Search Spotify with the Artist and Track Name
-    var spotifyData = getTrackURI(output.artist, output.trackName, function(results) {
-        var spotifyURI = results.tracks.items[0].uri
-
-        var playing
-
-        // Check if song is currently playing
-        if (output.nowPlaying == true) {
-          playing = true;
-        }
-
-        // Build Spotify iFrame Player
-        var player = buildSpotifyPlayer(spotifyURI)
-        io.sockets.emit('load', player, playing, output)
-      })
-  })
 
 
 	res.render('index', { data: 'test data' });
@@ -61,7 +35,37 @@ app.get('/', function(req, res) {
 io.on('connection', function(socket) {
   console.log('User Connected!');
 
+  socket.on('pageLoad', function(socket) {
+    // Set Last.fm API Key
+    var apiKey = '3e74f7586698913e408e1aa7881f9082'
+    var userName = 'xxmurder'
+    var url = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + userName + '&api_key=' + apiKey + '&format=json'
+
+    // Fetch Last.FM API for recent tracks
+    getRecentTracks(url, function(results) {
+
+      // Make object of necessary fields, store in output
+      var output = handleRecentTracks(results)
+
+      // Search Spotify with the Artist and Track Name
+      var spotifyData = getTrackURI(output.artist, output.trackName, function(results) {
+          var spotifyURI = results.tracks.items[0].uri
+
+          var playing
+
+          // Check if song is currently playing
+          if (output.nowPlaying == true) {
+            playing = true;
+          }
+
+          // Build Spotify iFrame Player
+          var player = buildSpotifyPlayer(spotifyURI)
+          io.sockets.emit('load', player, playing, output)
+        })
+    })
+  })
 })
+
 
 // LAST.FM API
 function getRecentTracks(url, callback) {
