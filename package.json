@@ -1,0 +1,26 @@
+{
+  "name": "spotify-now-playing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js & gulp"
+  },
+  "author": "TJ Egan",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-scss-lint": "^0.3.9"
+  },
+  "dependencies": {
+    "consolidate": "^0.14.0",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0"
+  }
+}

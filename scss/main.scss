@@ -1,0 +1,18 @@
+@import 'scaffolding/utilities';
+@import 'scaffolding/type';
+@import 'scaffolding/colors';
+
+* {
+	box-sizing: border-box;
+	transition: .3s;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.hidden {
+	display: none;
+}
