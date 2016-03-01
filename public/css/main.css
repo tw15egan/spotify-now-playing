@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  transition: .3s;
+  padding: 0;
+  margin: 0; }
+
+body, html {
+  height: 100%;
+  width: 100%; }
+
+body {
+  font-family: "proxima-nova";
+  font-size: 20px;
+  height: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #323232;
+  color: #71F79F; }
+
+h1 {
+  color: #424651;
+  padding: 1rem;
+  font-size: 2rem;
+  margin: 0;
+  width: 100%; }
+
+.music__box {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 300px;
+  background-color: #3f3f3f; }
+
+.music__box--status {
+  width: 100%;
+  background-color: #71F79F; }
+
+.music__box--info {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  list-style: none;
+  padding: 1rem 1rem;
+  width: 100%; }
+  .music__box--info .track {
+    color: #f0f0f0; }
+  .music__box--info .artist {
+    font-size: .9rem; }
+  .music__box--info .album {
+    color: #8b8b8b;
+    font-size: .8rem;
+    font-weight: 300; }
+
+a {
+  text-decoration: none; }
+
+.hidden {
+  display: none; }
