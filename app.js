@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 var request = require('request');
-var credentials = require('./credentials');
+var credentials = require('./credentials.js');
 
 var handlebars = require('express-handlebars');
 
