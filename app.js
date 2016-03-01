@@ -35,7 +35,7 @@ app.get('/', function(req, res) {
 io.on('connection', function(socket) {
   console.log('User Connected!');
 
-  socket.on('pageLoad', function(socket) {
+  socket.on('pageLoad', function(data) {
     // Set Last.fm API Key
     var apiKey = '3e74f7586698913e408e1aa7881f9082'
     var userName = 'xxmurder'
@@ -60,7 +60,7 @@ io.on('connection', function(socket) {
 
           // Build Spotify iFrame Player
           var player = buildSpotifyPlayer(spotifyURI)
-          io.sockets.emit('load', player, playing, output)
+          socket.emit('load', player, playing, output)
         })
     })
   })
