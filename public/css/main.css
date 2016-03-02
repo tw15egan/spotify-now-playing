@@ -88,10 +88,12 @@ h1 {
   .music__box--status span {
     color: #eafef1; }
   @media (max-width: 450px) {
-    .music__box--status h1 {
-      font-size: 3.5rem;
-      font-family: 'fatfrank';
-      letter-spacing: .5rem; } }
+    .music__box--status {
+      display: block; }
+      .music__box--status h1 {
+        font-size: 3.5rem;
+        font-family: 'fatfrank';
+        letter-spacing: .5rem; } }
   @media (max-width: 375px) {
     .music__box--status h1 {
       font-size: 2rem;
@@ -115,9 +117,7 @@ h1 {
   border-bottom: 20px solid #71F79F; }
   @media (max-width: 450px) {
     .music__box--data {
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
+      display: block;
       border: 0; } }
 
 .music__box--info {
@@ -255,6 +255,7 @@ a {
       fill: #71F79F; }
   @media (max-width: 450px) {
     .footer {
+      min-height: 80px;
       background-color: #71F79F; }
       .footer svg {
         fill: #282828;

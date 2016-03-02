@@ -87,6 +87,7 @@ h1 {
 	}
 
 	@media (max-width: 450px) {
+		display: block;
 		h1 {
 			font-size: 3.5rem;
 			font-family: 'fatfrank';
@@ -114,7 +115,7 @@ h1 {
 	border-bottom: 20px solid $spray;
 
 	@media (max-width: 450px) {
-		flex-direction: column;
+		display: block;
 		border: 0;
 	}
 }
@@ -252,7 +253,7 @@ a {
 	}
 
 	@media (max-width: 450px) {
-
+		min-height: 80px;
 		background-color: $spray;
 
 		svg {
