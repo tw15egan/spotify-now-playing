@@ -22,14 +22,28 @@ body {
 	font-size: 20px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	flex-direction: column;
-	background-color: #323232;
+	background-color: rgba(50, 50, 50, 0.95);
 	color: $spray;
 
 	@media (max-width: 450px) {
 		justify-content: flex-start;
 	}
+}
+
+.bg {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	background: linear-gradient(
+      rgba(25, 25, 25, 0.8),
+      rgba(25, 25, 25, 0.8)
+    ), url('https://images.unsplash.com/photo-1450849608880-6f787542c88a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=786a67dca1d8791d181bfd90b16240d9');
+	background-size: cover;
+	background-position: bottom;
+
+	filter: grayscale(1);
 }
 
 h1 {
@@ -42,11 +56,11 @@ h1 {
 }
 
 .music__box {
+	margin-top: 4rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	max-width: 300px;
-	background-color: lighten(#323232, 5%);
 
 	&:hover {
 		cursor: pointer;
@@ -56,6 +70,7 @@ h1 {
 		width: 100%;
 		height: 100%;
 		max-width: none;
+		margin-top: 0;
 	}
 }
 
@@ -74,6 +89,14 @@ h1 {
 			letter-spacing: .5rem;
 		}
 	}
+
+	@media (max-width: 375px) {
+		h1 {
+			font-size: 2rem;
+			font-family: 'fatfrank';
+			letter-spacing: .2rem;
+		}
+	}
 }
 
 .music__box--data {
@@ -81,9 +104,14 @@ h1 {
 	width: 100%;
 	display: flex;
 	position: relative;
+	background-color: #323232;
+
+	border-right: 20px solid $spray;
+	border-bottom: 20px solid $spray;
 
 	@media (max-width: 450px) {
 		flex-direction: column;
+		border: 0;
 	}
 }
 
@@ -195,7 +223,7 @@ a {
 	order: 4;
 	padding: .5rem;
 	width: 100%;
-	background-color: lighten(#323232, 5%);
+
 	display: flex;
 	justify-content: space-between;
 	svg {
