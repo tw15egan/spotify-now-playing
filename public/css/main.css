@@ -4,14 +4,15 @@
   padding: 0;
   margin: 0; }
 
-body, html {
-  height: 100%;
-  width: 100%; }
+html, body {
+  height: 100%; }
+  @media (max-height: 600px) {
+    html, body {
+      height: auto; } }
 
 body {
   font-family: "proxima-nova";
   font-size: 20px;
-  height: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -35,9 +36,10 @@ body {
 h1 {
   color: #424651;
   padding: 1rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   margin: 0;
-  width: 100%; }
+  width: 100%;
+  display: inline-block; }
 
 .music__box {
   display: -webkit-flex;
@@ -51,6 +53,8 @@ h1 {
           align-items: center;
   max-width: 300px;
   background-color: #3f3f3f; }
+  .music__box:hover {
+    cursor: pointer; }
   @media (max-width: 450px) {
     .music__box {
       width: 100%;
@@ -58,10 +62,42 @@ h1 {
       max-width: none; } }
 
 .music__box--status {
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   background-color: #71F79F; }
+  @media (max-width: 450px) {
+    .music__box--status h1 {
+      font-size: 3.5rem;
+      font-family: 'fatfrank';
+      letter-spacing: .5rem; } }
+
+.music__box--data {
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  @media (max-width: 450px) {
+    .music__box--data {
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
 
 .music__box--info {
+  height: auto;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -72,38 +108,43 @@ h1 {
       -ms-flex-pack: distribute;
           justify-content: space-around;
   list-style: none;
-  padding: 1rem 1rem;
-  width: 100%;
-  position: relative; }
+  padding: 1rem; }
   @media (max-width: 450px) {
     .music__box--info {
-      padding: 2rem 3rem;
+      padding: 2rem 1rem;
+      width: 100%;
       background-color: #323232; } }
-  .music__box--info::after {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    height: 30px;
-    width: 30px;
-    background: url("../img/arrows-2.svg");
-    background-size: 15px 15px;
-    background-repeat: no-repeat;
-    right: 0;
-    bottom: 0; }
   .music__box--info .track {
     color: #f0f0f0; }
+    @media (max-width: 450px) {
+      .music__box--info .track {
+        font-size: 3rem; } }
   .music__box--info .artist {
     font-size: .9rem; }
+    @media (max-width: 450px) {
+      .music__box--info .artist {
+        font-size: 2.5rem; } }
   .music__box--info .album {
     color: #8b8b8b;
     font-size: .8rem;
     font-weight: 300; }
+    @media (max-width: 450px) {
+      .music__box--info .album {
+        font-size: 1.7rem; } }
+
+.music__box--equalizer {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  background-color: #3f3f3f; }
+  @media (max-width: 450px) {
+    .music__box--equalizer {
+      width: 50%;
+      background-color: #323232; } }
 
 a {
   text-decoration: none; }
-
-.hidden {
-  display: none; }
 
 .music__box--player {
   -webkit-order: 3;
@@ -121,11 +162,16 @@ a {
           flex-basis: 1; }
   @media (max-width: 450px) {
     .music__box--player {
-      height: 100%;
       -webkit-align-items: center;
           -ms-flex-align: center;
                   -ms-grid-row-align: center;
-              align-items: center; } }
+              align-items: center;
+      width: 100%;
+      height: 250px;
+      background-color: #282828; }
+      .music__box--player iframe {
+        height: 80px;
+        width: 100%; } }
 
 .footer {
   -webkit-order: 4;
@@ -148,9 +194,19 @@ a {
       fill: #71F79F; }
   @media (max-width: 450px) {
     .footer {
-      padding: 2rem;
-      background-color: #323232; } }
+      background-color: #71F79F; }
+      .footer svg {
+        fill: #424651;
+        border-radius: 50%;
+        height: 75px;
+        width: 75px; }
+        .footer svg:hover path {
+          fill: #424651;
+          opacity: .7; } }
 
 .hide {
   display: inline-block;
-  height: 0; }
+  height: 80px; }
+
+.hidden {
+  opacity: 0; }

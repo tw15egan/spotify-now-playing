@@ -9,15 +9,17 @@
 	margin: 0;
 }
 
-body, html {
+html, body {
 	height: 100%;
-	width: 100%;
+
+	@media (max-height: 600px) {
+		height: auto;
+	}
 }
 
 body {
 	font-family: "proxima-nova";
 	font-size: 20px;
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -33,9 +35,10 @@ body {
 h1 {
 	color: $black;
 	padding: 1rem;
-	font-size: 2rem;
+	font-size: 1.7rem;
 	margin: 0;
 	width: 100%;
+	display: inline-block;
 }
 
 .music__box {
@@ -45,6 +48,10 @@ h1 {
 	max-width: 300px;
 	background-color: lighten(#323232, 5%);
 
+	&:hover {
+		cursor: pointer;
+	}
+
 	@media (max-width: 450px) {
 		width: 100%;
 		height: 100%;
@@ -53,58 +60,86 @@ h1 {
 }
 
 .music__box--status {
+	order: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
 	background-color: $spray;
+
+	@media (max-width: 450px) {
+		h1 {
+			font-size: 3.5rem;
+			font-family: 'fatfrank';
+			letter-spacing: .5rem;
+		}
+	}
+}
+
+.music__box--data {
+	order: 2;
+	width: 100%;
+	display: flex;
+
+	@media (max-width: 450px) {
+		flex-direction: column;
+	}
 }
 
 .music__box--info {
+	height: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	list-style: none;
-	padding: 1rem 1rem;
-	width: 100%;
-	position: relative;
+	padding: 1rem;
 
 	@media (max-width: 450px) {
-		padding: 2rem 3rem;
+		padding: 2rem 1rem;
+		width: 100%;
 		background-color: #323232;
-	}
-
-	&::after {
-		content: '';
-		position: absolute;
-		display: inline-block;
-		height: 30px;
-		width: 30px;
-		background: url('../img/arrows-2.svg');
-		background-size: 15px 15px;
-		background-repeat: no-repeat;
-		right: 0;
-		bottom: 0;
 	}
 
 	.track {
 		color: #f0f0f0;
+
+		@media (max-width: 450px) {
+			font-size: 3rem;
+		}
 	}
 
 	.artist {
 		font-size: .9rem;
+
+		@media (max-width: 450px) {
+			font-size: 2.5rem;
+		}
 	}
 
 	.album {
 		color: lighten(#323232, 35%);
 		font-size: .8rem;
 		font-weight: 300;
+
+		@media (max-width: 450px) {
+			font-size: 1.7rem;
+		}
+	}
+}
+
+.music__box--equalizer {
+	display: flex;
+	width: 50%;
+	background-color: lighten(#323232, 5%);
+
+	@media (max-width: 450px) {
+		width: 50%;
+		background-color: #323232;
 	}
 }
 
 a {
 	text-decoration: none;
-}
-
-.hidden {
-	display: none;
 }
 
 .music__box--player {
@@ -115,8 +150,15 @@ a {
 	flex-basis: 1;
 
 	@media (max-width: 450px) {
-		height: 100%;
 		align-items: center;
+		width: 100%;
+		height: 250px;
+		background-color: #282828;
+
+		iframe {
+			height: 80px;
+			width: 100%;
+		}
 	}
 }
 
@@ -142,13 +184,32 @@ a {
 	}
 
 	@media (max-width: 450px) {
-		padding: 2rem;
-		background-color: #323232;
+
+		background-color: $spray;
+
+		svg {
+			fill: $black;
+			border-radius: 50%;
+			height: 75px;
+			width: 75px;
+
+			&:hover {
+				path {
+					fill: $black;
+					opacity: .7;
+				}
+
+			}
+		}
 	}
 }
 
 
 .hide {
 	display: inline-block;
-	height: 0;
+	height: 80px;
+}
+
+.hidden {
+	opacity: 0;
 }

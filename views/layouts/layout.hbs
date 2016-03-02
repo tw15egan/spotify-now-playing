@@ -16,6 +16,21 @@
       <input type="text" placeholder="Enter a username" id="search" />
       <button type="submit" id="submit">SUBMIT</button>
     </form> -->
+    <div class="music__box--data">
+      <ul class="music__box--info">
+
+      </ul>
+      <div class="music__box--equalizer">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
     <div class="music__box--player"></div>
     <div class="footer">
       <a href="https://twitter.com/TJ_egan">
@@ -121,7 +136,7 @@
 
       </a>
     </div>
-  </div>
+
 
 
 
@@ -143,13 +158,12 @@
     socket.on('load', function(player, playing, trackInfo) {
       var player = player;
       var isPlaying = playing;
-      var trackInfo = '<ul class="music__box--info">' +
-                        '<li class="info--item track">'
+      var trackInfo = '<li class="info--item track">'
                       + trackInfo.trackName + '</li>' +
                         '<li class="info--item artist">'
                       +   trackInfo.artist + '</li>' +
                         '<li class="info--item album">'
-                      +   trackInfo.album + '</li></ul>'
+                      +   trackInfo.album + '</li>'
       console.log(trackInfo)
 
 
@@ -158,7 +172,7 @@
       } else {
         $('.music__box').append('<div class="music__box--status"><h1>LAST LISTENED TO</h1></div>')
       }
-      $('.music__box').append(trackInfo)
+      $('.music__box--info').append(trackInfo)
 
 
       $('.music__box--player').append(player)
