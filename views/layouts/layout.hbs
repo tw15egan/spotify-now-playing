@@ -170,6 +170,7 @@
       if (isPlaying === true) {
         $('.music__box').append('<div class="music__box--status"><h1>CURRENTLY LISTENING TO</h1></div>')
       } else {
+        $('.music__box--equalizer').hide();
         $('.music__box').append('<div class="music__box--status"><h1>LAST LISTENED TO</h1></div>')
       }
       $('.music__box--info').append(trackInfo)
@@ -182,6 +183,16 @@
       $('.music__box--player > iframe').toggleClass('hide')
       $('.music__box--info').toggleClass('flip')
     })
+
+    var bars = document.querySelectorAll('.bar')
+
+    setInterval(function() {
+      for (var i = 0; i < bars.length; i++) {
+      console.log(i)
+      bars[i].style.height = Math.floor((Math.random() * 20) + 1) + "px";
+      }
+    }, 120);
+
   </script>
 </body>
 </html>

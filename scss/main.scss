@@ -80,6 +80,7 @@ h1 {
 	order: 2;
 	width: 100%;
 	display: flex;
+	position: relative;
 
 	@media (max-width: 450px) {
 		flex-direction: column;
@@ -129,13 +130,38 @@ h1 {
 
 .music__box--equalizer {
 	display: flex;
+	align-items: flex-end;
+	justify-content: center;
 	width: 50%;
-	background-color: lighten(#323232, 5%);
+	padding: 1.2rem;
+	background-color: transparent;
 
 	@media (max-width: 450px) {
-		width: 50%;
-		background-color: #323232;
+		padding: 0;
+		top: 0;
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		right: 1rem;
+		transform: rotate(270deg);
 	}
+
+	.bar {
+		height: 10px;
+		width: 2px;
+	  background-color: $spray;
+	  margin: 0 5px 0 0;
+
+		&:nth-child(2n+1) {
+			background-color: darken($spray, 10%);
+		}
+
+		&:nth-child(4n+1) {
+			background-color: lighten($spray, 10%);
+		}
+	}
+
+
 }
 
 a {
@@ -156,8 +182,9 @@ a {
 		background-color: #282828;
 
 		iframe {
+			margin: 0 auto;
 			height: 80px;
-			width: 100%;
+			width: 90%;
 		}
 	}
 }
@@ -188,14 +215,14 @@ a {
 		background-color: $spray;
 
 		svg {
-			fill: $black;
+			fill: #282828;
 			border-radius: 50%;
 			height: 75px;
 			width: 75px;
 
 			&:hover {
 				path {
-					fill: $black;
+					fill: #282828;
 					opacity: .7;
 				}
 
