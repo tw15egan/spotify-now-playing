@@ -209,6 +209,7 @@ a {
               align-items: center;
       width: 100%;
       height: 250px;
+      min-height: 250px;
       background-color: #282828; }
       .music__box--player iframe {
         margin: 0 auto;
@@ -221,12 +222,26 @@ a {
           order: 4;
   padding: .5rem;
   width: 100%;
+  background-color: #323232;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .footer a {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
   .footer svg {
     height: 30px;
     width: 30px;
@@ -239,8 +254,9 @@ a {
       .footer svg {
         fill: #282828;
         border-radius: 50%;
-        height: 75px;
-        width: 75px; }
+        height: 50px;
+        width: 50px;
+        margin: 0 1rem; }
         .footer svg:hover path {
           fill: #282828;
           opacity: .7; } }

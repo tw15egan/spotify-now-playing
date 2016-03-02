@@ -207,6 +207,7 @@ a {
 		align-items: center;
 		width: 100%;
 		height: 250px;
+		min-height: 250px;
 		background-color: #282828;
 
 		iframe {
@@ -223,9 +224,17 @@ a {
 	order: 4;
 	padding: .5rem;
 	width: 100%;
-
+  background-color: #323232;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+
+	a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
 	svg {
 	  height: 30px;
 	  width: 30px;
@@ -245,8 +254,9 @@ a {
 		svg {
 			fill: #282828;
 			border-radius: 50%;
-			height: 75px;
-			width: 75px;
+			height: 50px;
+			width: 50px;
+			margin: 0 1rem;
 
 			&:hover {
 				path {
