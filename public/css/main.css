@@ -42,7 +42,7 @@ body {
           filter: grayscale(1); }
 
 h1 {
-  color: #424651;
+  color: #323232;
   padding: 1rem;
   font-size: 1.7rem;
   margin: 0;
@@ -85,6 +85,8 @@ h1 {
           justify-content: center;
   width: 100%;
   background-color: #71F79F; }
+  .music__box--status span {
+    color: #eafef1; }
   @media (max-width: 450px) {
     .music__box--status h1 {
       font-size: 3.5rem;
@@ -104,6 +106,9 @@ h1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
   background-color: #323232;
   border-right: 20px solid #71F79F;
@@ -161,7 +166,7 @@ h1 {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 50%;
+  width: 35%;
   padding: 1.2rem;
   background-color: transparent; }
   @media (max-width: 450px) {
