@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>spotify-now-playing</title>
+	<title>TJ IS LISTENING TO || </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="/css/main.css">
 	<script src="/scripts/ui.js"></script>
@@ -153,18 +153,22 @@
       var searchString = ''
       socket.emit('pageLoad', searchString)
       return false;
+
+
     })
 
     socket.on('load', function(player, playing, trackInfo) {
       var player = player;
       var isPlaying = playing;
+      var currentDocTitle = trackInfo.trackName.toUpperCase() + ' // ' + trackInfo.artist.toUpperCase();
+      document.title = currentDocTitle;
+      console.log(currentDocTitle)
       var trackInfo = '<li class="info--item track">'
                       + trackInfo.trackName + '</li>' +
                         '<li class="info--item artist">'
                       +   trackInfo.artist + '</li>' +
                         '<li class="info--item album">'
                       +   trackInfo.album + '</li>'
-      console.log(trackInfo)
 
 
       if (isPlaying === true) {
@@ -188,7 +192,6 @@
 
     setInterval(function() {
       for (var i = 0; i < bars.length; i++) {
-      console.log(i)
       bars[i].style.height = Math.floor((Math.random() * 20) + 1) + "px";
       }
     }, 120);
