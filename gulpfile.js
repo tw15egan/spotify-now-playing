@@ -4,6 +4,8 @@ scsslint = require('gulp-scss-lint') ,
 autoprefixer = require('gulp-autoprefixer') ,
 browserSync = require('browser-sync') ,
 plumber = require('gulp-plumber') ,
+rename = require("gulp-rename") ,
+imageResize = require('gulp-image-resize') ,
 reload = browserSync.reload;
 
 var SOURCE = {
@@ -36,6 +38,19 @@ gulp.task('browser-sync', function(){
 		notify: false
 	});
 });
+
+gulp.task('images', function() {
+    gulp.src('public/img/bg.jpeg')
+    .pipe(imageResize({
+        width: '25%',
+        height: '25%',
+        upscale:false
+    }))
+    .pipe(rename(function(path){
+        path.basename += "-min";
+    }))
+    .pipe(gulp.dest('./public/img'))
+})
 
 gulp.task('bs-reload', function(){
 	browserSync.reload();

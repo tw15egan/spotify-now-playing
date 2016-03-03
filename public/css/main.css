@@ -35,7 +35,7 @@ body {
   height: 100%;
   width: 100%;
   z-index: -1;
-  background: linear-gradient(rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.8)), url("https://images.unsplash.com/photo-1450849608880-6f787542c88a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=786a67dca1d8791d181bfd90b16240d9");
+  background: linear-gradient(rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.8)), url("../img/bg-min.jpeg");
   background-size: cover;
   background-position: bottom;
   -webkit-filter: grayscale(1);
