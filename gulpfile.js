@@ -6,19 +6,17 @@ browserSync = require('browser-sync') ,
 plumber = require('gulp-plumber') ,
 rename = require("gulp-rename") ,
 imageResize = require('gulp-image-resize') ,
+uglify = require('gulp-uglify'),
+babel = require('gulp-babel'),
 reload = browserSync.reload;
 
 var SOURCE = {
 	scss: 'scss/**/*.scss',
 	css: 'public/css',
 	hbs: 'views/**/*.hbs',
-	js: ['/*.js', 'public/scripts/*.js'],
+	js: 'public/scripts/*.js',
 	images: 'public/images/icon-library/svg/*'
 };
-
-// var dest = {
-// 	data: 'data'
-// };
 
 var AUTOPREFIXER_BROWSERS = [
 'ie >= 10',
@@ -44,7 +42,7 @@ gulp.task('images', function() {
     .pipe(imageResize({
         width: '25%',
         height: '25%',
-        upscale:false
+        upscale: false
     }))
     .pipe(rename(function(path){
         path.basename += "-min";
@@ -57,7 +55,7 @@ gulp.task('bs-reload', function(){
 });
 
 gulp.task('scss-lint', function(){
-	gulp.src('/' + SOURCE.js)
+	gulp.src('/' + SOURCE.scss)
 	.pipe(scsslint());
 });
 

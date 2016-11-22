@@ -29,6 +29,8 @@ body {
       -webkit-justify-content: flex-start;
           -ms-flex-pack: start;
               justify-content: flex-start; } }
+  body a {
+    text-decoration: none; }
 
 .bg {
   position: fixed;
@@ -63,6 +65,9 @@ h1 {
   max-width: 300px; }
   .music__box:hover {
     cursor: pointer; }
+    @media (max-width: 450px) {
+      .music__box:hover {
+        cursor: initial; } }
   @media (max-width: 450px) {
     .music__box {
       width: 100%;
@@ -188,9 +193,6 @@ h1 {
       background-color: #41f47e; }
     .music__box--equalizer .bar:nth-child(4n+1) {
       background-color: #a1fac0; }
-
-a {
-  text-decoration: none; }
 
 .music__box--player {
   -webkit-order: 3;

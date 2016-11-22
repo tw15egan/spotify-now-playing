@@ -1,5 +1,3 @@
-@import 'scaffolding/utilities';
-@import 'scaffolding/type';
 @import 'scaffolding/colors';
 
 * {
@@ -28,6 +26,10 @@ body {
 
   @media (max-width: 450px) {
     justify-content: flex-start;
+  }
+  
+  a {
+    text-decoration: none;
   }
 }
 
@@ -64,6 +66,10 @@ h1 {
 
   &:hover {
     cursor: pointer;
+
+    @media (max-width: 450px) {
+      cursor: initial;
+    }
   }
 
   @media (max-width: 450px) {
@@ -197,10 +203,6 @@ h1 {
 
 }
 
-a {
-  text-decoration: none;
-}
-
 .music__box--player {
   order: 3;
   display: flex;
@@ -222,8 +224,6 @@ a {
     }
   }
 }
-
-
 
 .footer {
   order: 4;
@@ -268,12 +268,10 @@ a {
           fill: #282828;
           opacity: .7;
         }
-
       }
     }
   }
 }
-
 
 .hide {
   display: inline-block;
