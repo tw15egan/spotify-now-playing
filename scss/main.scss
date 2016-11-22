@@ -3,283 +3,283 @@
 @import 'scaffolding/colors';
 
 * {
-	box-sizing: border-box;
-	transition: .3s;
-	padding: 0;
-	margin: 0;
+  box-sizing: border-box;
+  transition: .3s;
+  padding: 0;
+  margin: 0;
 }
 
 html, body {
-	height: 100%;
+  height: 100%;
 
-	@media (max-height: 600px) {
-		height: auto;
-	}
+  @media (max-height: 600px) {
+    height: auto;
+  }
 }
 
 body {
-	font-family: "proxima-nova";
-	font-size: 20px;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	background-color: rgba(50, 50, 50, 0.95);
-	color: $spray;
+  font-family: "proxima-nova";
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(50, 50, 50, 0.95);
+  color: $spray;
 
-	@media (max-width: 450px) {
-		justify-content: flex-start;
-	}
+  @media (max-width: 450px) {
+    justify-content: flex-start;
+  }
 }
 
 .bg {
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	z-index: -1;
-	background: linear-gradient(
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: linear-gradient(
       rgba(25, 25, 25, 0.8),
       rgba(25, 25, 25, 0.8)
     ), url('../img/bg-min.jpeg');
-	background-size: cover;
-	background-position: bottom;
+  background-size: cover;
+  background-position: bottom;
 
-	filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 h1 {
-	color: $black;
-	padding: 1rem;
-	font-size: 1.7rem;
-	margin: 0;
-	width: 100%;
-	display: inline-block;
+  color: $black;
+  padding: 1rem;
+  font-size: 1.7rem;
+  margin: 0;
+  width: 100%;
+  display: inline-block;
 }
 
 .music__box {
-	margin-top: 4rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	max-width: 300px;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
 
-	&:hover {
-		cursor: pointer;
-	}
+  &:hover {
+    cursor: pointer;
+  }
 
-	@media (max-width: 450px) {
-		width: 100%;
-		height: 100%;
-		max-width: none;
-		margin-top: 0;
-	}
+  @media (max-width: 450px) {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    margin-top: 0;
+  }
 }
 
 .music__box--status {
-	order: 1;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	background-color: $spray;
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: $spray;
 
-	span {
-		color: lighten($spray, 25%);
-	}
+  span {
+    color: lighten($spray, 25%);
+  }
 
-	@media (max-width: 450px) {
-		display: block;
-		h1 {
-			font-size: 3.5rem;
-			font-family: 'fatfrank';
-			letter-spacing: .5rem;
-		}
-	}
+  @media (max-width: 450px) {
+    display: block;
+    h1 {
+      font-size: 3.5rem;
+      font-family: 'fatfrank';
+      letter-spacing: .5rem;
+    }
+  }
 
-	@media (max-width: 375px) {
-		h1 {
-			font-size: 2rem;
-			font-family: 'fatfrank';
-			letter-spacing: .2rem;
-		}
-	}
+  @media (max-width: 375px) {
+    h1 {
+      font-size: 2rem;
+      font-family: 'fatfrank';
+      letter-spacing: .2rem;
+    }
+  }
 }
 
 .music__box--data {
-	order: 2;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	position: relative;
-	background-color: #323232;
-	border-right: 20px solid $spray;
-	border-bottom: 20px solid $spray;
+  order: 2;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background-color: #323232;
+  border-right: 20px solid $spray;
+  border-bottom: 20px solid $spray;
 
-	@media (max-width: 450px) {
-		display: block;
-		border: 0;
-	}
+  @media (max-width: 450px) {
+    display: block;
+    border: 0;
+  }
 }
 
 .music__box--info {
-	height: auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	list-style: none;
-	padding: 1rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style: none;
+  padding: 1rem;
 
-	@media (max-width: 450px) {
-		padding: 2rem 1rem;
-		width: 100%;
-		background-color: #323232;
-	}
+  @media (max-width: 450px) {
+    padding: 2rem 1rem;
+    width: 100%;
+    background-color: #323232;
+  }
 
-	.track {
-		color: #f0f0f0;
+  .track {
+    color: #f0f0f0;
 
-		@media (max-width: 450px) {
-			font-size: 3rem;
-		}
-	}
+    @media (max-width: 450px) {
+      font-size: 3rem;
+    }
+  }
 
-	.artist {
-		font-size: .9rem;
+  .artist {
+    font-size: .9rem;
 
-		@media (max-width: 450px) {
-			font-size: 2.5rem;
-		}
-	}
+    @media (max-width: 450px) {
+      font-size: 2.5rem;
+    }
+  }
 
-	.album {
-		color: lighten(#323232, 35%);
-		font-size: .8rem;
-		font-weight: 300;
+  .album {
+    color: lighten(#323232, 35%);
+    font-size: .8rem;
+    font-weight: 300;
 
-		@media (max-width: 450px) {
-			font-size: 1.7rem;
-		}
-	}
+    @media (max-width: 450px) {
+      font-size: 1.7rem;
+    }
+  }
 }
 
 .music__box--equalizer {
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	width: 35%;
-	padding: 1.2rem;
-	background-color: transparent;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 35%;
+  padding: 1.2rem;
+  background-color: transparent;
 
-	@media (max-width: 450px) {
-		padding: 0;
-		top: 0;
-		width: 100px;
-		height: 100px;
-		position: absolute;
-		right: 1rem;
-		transform: rotate(270deg);
-	}
+  @media (max-width: 450px) {
+    padding: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 1rem;
+    transform: rotate(270deg);
+  }
 
-	.bar {
-		height: 10px;
-		width: 2px;
-	  background-color: $spray;
-	  margin: 0 5px 0 0;
+  .bar {
+    height: 10px;
+    width: 2px;
+    background-color: $spray;
+    margin: 0 5px 0 0;
 
-		&:nth-child(2n+1) {
-			background-color: darken($spray, 10%);
-		}
+    &:nth-child(2n+1) {
+      background-color: darken($spray, 10%);
+    }
 
-		&:nth-child(4n+1) {
-			background-color: lighten($spray, 10%);
-		}
-	}
+    &:nth-child(4n+1) {
+      background-color: lighten($spray, 10%);
+    }
+  }
 
 
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .music__box--player {
-	order: 3;
-	display: flex;
-	align-items: flex-end;
-	overflow: auto;
-	flex-basis: 1;
+  order: 3;
+  display: flex;
+  align-items: flex-end;
+  overflow: auto;
+  flex-basis: 1;
 
-	@media (max-width: 450px) {
-		align-items: center;
-		width: 100%;
-		height: 250px;
-		min-height: 250px;
-		background-color: #282828;
+  @media (max-width: 450px) {
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    min-height: 250px;
+    background-color: #282828;
 
-		iframe {
-			margin: 0 auto;
-			height: 80px;
-			width: 90%;
-		}
-	}
+    iframe {
+      margin: 0 auto;
+      height: 80px;
+      width: 90%;
+    }
+  }
 }
 
 
 
 .footer {
-	order: 4;
-	padding: .5rem;
-	width: 100%;
+  order: 4;
+  padding: .5rem;
+  width: 100%;
   background-color: $black;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-	a {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-	svg {
-	  height: 30px;
-	  width: 30px;
-		fill: lighten(#323232, 35%);
+  svg {
+    height: 30px;
+    width: 30px;
+    fill: lighten(#323232, 35%);
 
-		&:hover {
-			path {
-				fill: $spray;
-			}
-		}
-	}
+    &:hover {
+      path {
+        fill: $spray;
+      }
+    }
+  }
 
-	@media (max-width: 450px) {
-		min-height: 80px;
-		background-color: $spray;
+  @media (max-width: 450px) {
+    min-height: 80px;
+    background-color: $spray;
 
-		svg {
-			fill: #282828;
-			border-radius: 50%;
-			height: 50px;
-			width: 50px;
-			margin: 0 1rem;
+    svg {
+      fill: #282828;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      margin: 0 1rem;
 
-			&:hover {
-				path {
-					fill: #282828;
-					opacity: .7;
-				}
+      &:hover {
+        path {
+          fill: #282828;
+          opacity: .7;
+        }
 
-			}
-		}
-	}
+      }
+    }
+  }
 }
 
 
 .hide {
-	display: inline-block;
-	height: 80px;
+  display: inline-block;
+  height: 80px;
 }
 
 .hidden {
-	opacity: 0;
+  opacity: 0;
 }

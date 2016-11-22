@@ -29,7 +29,7 @@ app.get('/', function(req, res) {
 
 
 
-	res.render('index', { data: 'test data' });
+  res.render('index', { data: 'test data' });
 });
 
 io.on('connection', function(socket) {
